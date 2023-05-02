@@ -31,10 +31,21 @@ window.onload = function (evt) {
 // 6 - mousemove
     document.body.addEventListener('mousemove', evt => {
         const {clientX, clientY} = evt
-        console.log(`Mouse is at ${clientX}, ${clientY}`)
+        // console.log(`Mouse is at ${clientX}, ${clientY}`)
     })
-// 7 - 
-// 8 - 
+// 7 - mouseenter 
+    const destinations = document.querySelectorAll('.destination')
+    for (let destination of destinations) {
+        destination.addEventListener('mouseenter', () => {
+            destination.style.fontWeight = 'bold'
+        })
+// 8 - mouseleave
+        destination.addEventListener('mouseleave', () => {
+            setTimeout(() => {
+                destination.style.fontWeight = 'initial'
+            }, 500)
+        })
+    }
 // 9 - 
 // 10 - 
 }
